@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cykelfest - Planner</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Dancing+Script:wght@700&display=swap"
+          rel="stylesheet"
+  />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="wasm_exec.js"></script>
   <script defer src="app.js"></script>
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #87CEEB; }
-    h1 { font-family: 'Dancing Script', cursive; font-size: 3rem; color: #2c3e50; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #87CEEB;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      color: #2c3e50;
+    }
+
+    button:active {
+      transform: translateY(1px);
+      opacity: 0.95;
+    }
   </style>
 </head>
 <body class="p-6">
 <div class="container max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-  <h1 class="text-center mb-6">Cykelfest Planner</h1>
+  <h1 class="text-center mb-6">Cykelfest Planerare</h1>
 
   <div class="mb-6">
-    <h2 class="text-xl font-semibold mb-2">Hosting Couples</h2>
+    <h2 class="text-xl font-semibold mb-2">Gäster</h2>
     <div id="hosting-couples" class="space-y-2"></div>
-    <button id="add-hosting" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded">Add Hosting Couple</button>
+    <button id="add-hosting" class="mt-2 px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded transition">
+      Add Hosting Couple
+    </button>
   </div>
 
   <div class="mb-6">
     <h2 class="text-xl font-semibold mb-2">Non-Hosting Couples</h2>
     <div id="nonhosting-couples" class="space-y-2"></div>
-    <button id="add-nonhosting" class="mt-2 px-4 py-2 bg-green-600 text-white rounded">Add Non-Hosting Couple</button>
+    <button id="add-nonhosting" class="mt-2 px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded transition">
+      Add Non-Hosting Couple
+    </button>
   </div>
 
   <div class="mb-6">
     <h2 class="text-xl font-semibold mb-2">Forbidden Pairs</h2>
     <div id="forbidden-pairs" class="space-y-2"></div>
-    <button id="add-forbidden" class="mt-2 px-4 py-2 bg-red-600 text-white rounded">Add Forbidden Pair</button>
+    <button id="add-forbidden" class="mt-2 px-4 py-2 bg-rose-400 hover:bg-rose-500 text-white rounded transition">
+      Add Forbidden Pair
+    </button>
   </div>
 
-  <div class="flex space-x-4 mb-6">
-    <button id="save" class="px-6 py-3 bg-gray-600 text-white rounded">Save</button>
-    <button id="generate" class="px-6 py-3 bg-purple-600 text-white rounded">Generate Plan</button>
+  <div class="flex flex-wrap gap-4 mb-6">
+    <button id="save" class="px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white rounded transition">
+      Save
+    </button>
+    <button id="generate" class="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded transition">
+      Generate Plan
+    </button>
   </div>
 
   <div id="output" class="mt-6 space-y-4 text-sm"></div>
 </div>
-
 </body>
 </html>
