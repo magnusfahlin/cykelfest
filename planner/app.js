@@ -138,8 +138,11 @@ document.getElementById('add-forbidden').addEventListener('click', () => {
 
 window.renderOutput = function (resultJSON) {
     console.log('✅ Result from WASM:', resultJSON);
-    localStorage.setItem(OUTPUT_STORAGE_KEY, resultJSON);
-
+    try {
+        localStorage.setItem(OUTPUT_STORAGE_KEY, resultJSON);
+    } catch (e) {
+        console.warn('⚠️ Could not save result to localStorage, possibly too large.', e);
+    }
     const result = JSON.parse(resultJSON);
     const outputDiv = document.getElementById('output');
     outputDiv.innerHTML = '';
